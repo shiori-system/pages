@@ -603,14 +603,14 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
-      <p class="hero-label">Excel &amp; VBA / 業務改善 / DX推進</p>
+      <p class="hero-label">業務改善 / DX推進 / アプリ開発 / VBA</p>
       <h1 class="hero-title">
         その<em>手作業</em>、<br>
         まだ続けますか？
       </h1>
       <p class="hero-sub">
-        中小企業の現場を知り抜いたプロが、ExcelとVBAで<br>
-        「月10時間の作業」を「1クリック」に変えます。
+        中小企業の現場を知り抜いたプロが、VBA・AppSheetで<br>
+        業務を自動化し、会社全体のDXを加速します。
       </p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-primary">無料相談はこちら</a>
@@ -624,18 +624,8 @@
     <p class="section-label fade-in">Services</p>
     <h2 class="section-title fade-in">サービス内容</h2>
     <div class="divider fade-in"></div>
-    <p class="section-desc fade-in">現場の業務フローを丁寧にヒアリングし、最適なITソリューションを提供します。</p>
+    <p class="section-desc fade-in">VBA・AppSheetを中心に、現場の業務フローを丁寧にヒアリングして自動化・DX化を実現します。</p>
     <div class="services-grid">
-      <div class="service-card fade-in">
-        <div class="service-icon">⚙️</div>
-        <h3>VBA開発</h3>
-        <p>Excel上で動くマクロ・自動化ツールを開発。繰り返し作業をボタン一つで完了させます。請求書発行・集計・転記・メール送信など幅広く対応。</p>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">📊</div>
-        <h3>Excel支援</h3>
-        <p>関数設計・フォーマット整備・ダッシュボード作成まで。「なんとなく使っていたExcel」を強力な業務ツールに変えます。</p>
-      </div>
       <div class="service-card fade-in">
         <div class="service-icon">🔄</div>
         <h3>業務改善提案</h3>
@@ -645,6 +635,21 @@
         <div class="service-icon">🚀</div>
         <h3>DX推進</h3>
         <p>ExcelやVBAを起点に、業務全体のデジタル化を段階的に推進。大がかりなシステム不要で、身近なツールから始めるDXを実現します。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">📱</div>
+        <h3>AppSheet開発支援</h3>
+        <p>Googleが提供するノーコードツール「AppSheet」を活用し、スマホ・タブレットで使える業務アプリを素早く構築。現場の入力・承認・共有をデジタル化します。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">⚙️</div>
+        <h3>VBA開発</h3>
+        <p>Excel上で動くマクロ・自動化ツールを開発。繰り返し作業をボタン一つで完了させます。請求書発行・集計・転記・メール送信など幅広く対応。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">📊</div>
+        <h3>Excel支援</h3>
+        <p>関数設計・フォーマット整備・ダッシュボード作成まで。「なんとなく使っていたExcel」を強力な業務ツールに変えます。</p>
       </div>
     </div>
   </section>
@@ -697,20 +702,20 @@
         <p class="case-desc">各取引先ごとに手作業で作成していた請求書を、VBAで完全自動化。データ入力から印刷・PDF出力まで、ボタン一つで完了する仕組みを構築しました。</p>
       </div>
       <div class="case-card fade-in">
-        <p class="case-tag">運輸業 / チャーター便発注システム</p>
-        <h3>チャーター便の発注業務をシステム化</h3>
+        <p class="case-tag">運輸業 / チャーター発注管理アプリ</p>
+        <h3>AppSheet×スプレッドシートでチャーター発注を一元管理</h3>
         <div class="case-metrics">
           <div class="metric">
-            <div class="metric-val before">毎日1時間</div>
+            <div class="metric-val before">紙・Excel</div>
             <div class="metric-label">導入前</div>
           </div>
           <div class="arrow">→</div>
           <div class="metric">
-            <div class="metric-val after">1クリック</div>
+            <div class="metric-val after">ブラウザ・スマホで発注を管理</div>
             <div class="metric-label">導入後</div>
           </div>
         </div>
-        <p class="case-desc">手書き・電話・FAXで行っていたチャーター便の発注フローをExcelベースのシステムに置き換え。毎日の定型作業を大幅に削減しました。</p>
+        <p class="case-desc">紙伝票・電話・Excelで分散していたチャーター発注業務をAppSheetアプリに集約。発注登録・一覧・カレンダー・ダッシュボードを統合し、ブラウザ・スマホどちらからでも出先でリアルタイムに確認・更新が可能に。売上・利益の見える化も実現。</p>
       </div>
     </div>
   </section>
@@ -820,28 +825,6 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Formspree 非同期送信
-    async function formSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          alert('お問い合わせを受け付けました。');
-          form.reset();
-        } else {
-          alert('送信に失敗しました。時間をおいて再度お試しください。');
-        }
-      } catch (err) {
-        alert('通信エラーが発生しました。時間をおいて再度お試しください。');
-      }
-    }
 
     // フォーム送信（Formspree連携）
     async function formSubmit(e) {
