@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>栞システム | VBA開発・Excel支援・業務改善・DX推進</title>
+  <title>栞システム | 物流・運送・倉庫会社の事務作業を自動化（Excel・VBA・AppSheet）</title>
   <style>
     :root {
       --bg: #0d0d0d;
@@ -205,7 +205,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5px;
       background: var(--border);
     }
@@ -351,6 +351,163 @@
       font-size: 0.82rem;
       color: var(--text2);
       line-height: 1.7;
+    }
+
+    .case-problem {
+      font-size: 0.82rem;
+      color: var(--text);
+      background: rgba(200,169,110,0.06);
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .case-problem b { color: var(--accent); font-weight: 700; margin-right: 0.4rem; }
+
+    .case-effects {
+      list-style: none;
+      margin-top: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.8rem;
+    }
+
+    .case-effects li {
+      font-size: 0.82rem;
+      color: var(--text);
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+    }
+
+    .case-effects li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .case-effects li strong { color: var(--accent); }
+
+    /* ========== PAINS ========== */
+    #pains { background: var(--bg); }
+
+    .pains-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pain-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.4rem;
+    }
+
+    .pain-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .pain-item h3::before { content: '— '; color: var(--accent); }
+
+    .pain-item p {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.8;
+    }
+
+    .pain-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .pain-stat {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.2rem;
+    }
+
+    .pain-stat .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .pain-stat .txt { font-size: 0.85rem; color: var(--text); }
+    .pain-stat .src { font-size: 0.7rem; color: var(--text2); margin-top: 0.2rem; }
+
+    /* ========== DIAGNOSIS ========== */
+    #diagnosis {
+      background: var(--bg3);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diag-points {
+      list-style: none;
+      max-width: 640px;
+      margin-bottom: 1.75rem;
+    }
+
+    .diag-points li {
+      font-size: 0.9rem;
+      padding: 0.55rem 0 0.55rem 1.6rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diag-points li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .diag-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .diag-step {
+      background: var(--bg2);
+      padding: 1.1rem 1.25rem;
+    }
+
+    .diag-step .step-no {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+    }
+
+    .diag-step h3 {
+      font-size: 0.98rem;
+      color: var(--white);
+      margin: 0.2rem 0 0.3rem;
+    }
+
+    .diag-step p { font-size: 0.82rem; color: var(--text2); }
+
+    .diag-note {
+      font-size: 0.8rem;
+      color: var(--text2);
+      margin-bottom: 1.25rem;
+    }
+
+    .other-industry {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text2);
     }
 
     /* ========== VIDEO ========== */
@@ -555,6 +712,8 @@
       .services-grid { grid-template-columns: 1fr; }
       .strengths-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
+      .pains-grid, .pain-stats, .diag-steps { grid-template-columns: 1fr; }
+      .case-metrics { flex-wrap: wrap; }
 
       .metric-val { font-size: 1.2rem; }
       .metric-val.after { font-size: 1.5rem; }
@@ -586,8 +745,9 @@
     <nav>
       <a href="#services">サービス</a>
       <a href="#cases">実績</a>
+      <a href="#diagnosis">無料診断</a>
       <a href="#company">会社概要</a>
-      <a href="#contact" class="nav-cta">お問い合わせ</a>
+      <a href="#contact" class="nav-cta">無料診断を申し込む</a>
     </nav>
     <div class="hamburger" onclick="toggleMenu()" id="hamburger">
       <span></span><span></span><span></span>
@@ -596,25 +756,63 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMenu()">サービス</a>
     <a href="#cases" onclick="closeMenu()">実績</a>
+    <a href="#diagnosis" onclick="closeMenu()">無料診断</a>
     <a href="#company" onclick="closeMenu()">会社概要</a>
-    <a href="#contact" onclick="closeMenu()">お問い合わせ</a>
+    <a href="#contact" onclick="closeMenu()">無料診断を申し込む</a>
   </div>
 
   <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
-      <p class="hero-label">業務改善 / DX推進 / アプリ開発 / VBA</p>
+      <p class="hero-label">物流・運送・倉庫会社さま専門 / 事務作業の自動化</p>
       <h1 class="hero-title">
-        その<em>手作業</em>、<br>
+        物流の<em>手作業</em>、<br>
         まだ続けますか？
       </h1>
       <p class="hero-sub">
-        中小企業の現場を知り抜いたプロが、VBA・AppSheetで<br>
-        業務を自動化し、会社全体のDXを加速します。
+        請求書・配車・発注・集計。人が足りない現場の事務作業を、<br>
+        いま使っているExcelのまま、ボタン一つで終わる仕組みに変えます。
       </p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">無料相談はこちら</a>
+        <a href="#contact" class="btn-primary">無料業務診断を申し込む</a>
         <a href="#cases" class="btn-secondary">実績を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINS -->
+  <section id="pains">
+    <p class="section-label fade-in">Problems</p>
+    <h2 class="section-title fade-in">物流の事務で、こんなお悩みありませんか？</h2>
+    <div class="divider fade-in"></div>
+    <div class="pains-grid">
+      <div class="pain-item fade-in">
+        <h3>人が足りない</h3>
+        <p>募集しても事務員が集まらない。今いる人に作業が集中し、残業でなんとか回している。</p>
+      </div>
+      <div class="pain-item fade-in">
+        <h3>あの人しか分からない</h3>
+        <p>請求や配車のExcelが担当者の頭の中にしかない。休まれたら、辞められたら止まってしまう。</p>
+      </div>
+      <div class="pain-item fade-in">
+        <h3>紙・FAX・電話から転記</h3>
+        <p>届いた依頼書や伝票を、毎日Excelに手で打ち直している。入力ミスと確認作業が減らない。</p>
+      </div>
+      <div class="pain-item fade-in">
+        <h3>数字がすぐに見えない</h3>
+        <p>荷主別・車両別の売上や利益が、月末に集計するまで分からない。判断が後手に回る。</p>
+      </div>
+    </div>
+    <div class="pain-stats">
+      <div class="pain-stat fade-in">
+        <div class="num">66.4%</div>
+        <div class="txt">「正社員が不足している」と答えた運輸・倉庫業の企業</div>
+        <div class="src">出典：帝国データバンク「人手不足に対する企業の動向調査」（2025年1月）</div>
+      </div>
+      <div class="pain-stat fade-in">
+        <div class="num">75.7%</div>
+        <div class="txt">「専門的な定型業務が特定の人に集中している」と答えた製造・物流の経営層</div>
+        <div class="src">出典：ゴウリカ 製造・物流業界の業務時間と生産性に関する調査（2026年4月）</div>
       </div>
     </div>
   </section>
@@ -622,34 +820,39 @@
   <!-- SERVICES -->
   <section id="services">
     <p class="section-label fade-in">Services</p>
-    <h2 class="section-title fade-in">サービス内容</h2>
+    <h2 class="section-title fade-in">自動化できる物流の業務</h2>
     <div class="divider fade-in"></div>
-    <p class="section-desc fade-in">VBA・AppSheetを中心に、現場の業務フローを丁寧にヒアリングして自動化・DX化を実現します。</p>
+    <p class="section-desc fade-in">いまの業務の流れやExcelを大きく変えずに、手作業の部分だけを自動にします。現場の入力はスマホからもできます。</p>
     <div class="services-grid">
       <div class="service-card fade-in">
-        <div class="service-icon">🔄</div>
-        <h3>業務改善提案</h3>
-        <p>現場目線で業務フローを分析し、「どこを自動化すれば効果が大きいか」を明確化。ツール導入だけでなく、運用定着まで伴走します。</p>
+        <div class="service-icon">🧾</div>
+        <h3>請求書・運賃計算</h3>
+        <p>荷主ごとの締め日・運賃・付帯料金を自動で集計し、請求書の作成からPDF出力までボタン一つで。<br>（VBA・Excel）</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">🚀</div>
-        <h3>DX推進</h3>
-        <p>ExcelやVBAを起点に、業務全体のデジタル化を段階的に推進。大がかりなシステム不要で、身近なツールから始めるDXを実現します。</p>
+        <div class="service-icon">🚚</div>
+        <h3>配車・チャーター発注管理</h3>
+        <p>紙・電話・Excelに分散した配車や発注を一元管理。出先からスマホで確認・更新できます。<br>（AppSheet・スプレッドシート）</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">📱</div>
-        <h3>AppSheet開発支援</h3>
-        <p>Googleが提供するノーコードツール「AppSheet」を活用し、スマホ・タブレットで使える業務アプリを素早く構築。現場の入力・承認・共有をデジタル化します。</p>
+        <div class="service-icon">📦</div>
+        <h3>入出荷・在庫の集計</h3>
+        <p>WMSや基幹システムから出したデータを、決まった形の日報・月報・ピッキングリストに自動で整形します。<br>（VBA・Excel）</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">⚙️</div>
-        <h3>VBA開発</h3>
-        <p>Excel上で動くマクロ・自動化ツールを開発。繰り返し作業をボタン一つで完了させます。請求書発行・集計・転記・メール送信など幅広く対応。</p>
+        <div class="service-icon">🗂️</div>
+        <h3>転記作業・日報の自動化</h3>
+        <p>点呼記録・運転日報・作業実績など、毎日の転記と二重入力をなくします。<br>（VBA・AppSheet）</p>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">📊</div>
-        <h3>Excel支援</h3>
-        <p>関数設計・フォーマット整備・ダッシュボード作成まで。「なんとなく使っていたExcel」を強力な業務ツールに変えます。</p>
+        <h3>売上・利益の見える化</h3>
+        <p>荷主別・車両別・担当者別の売上と利益を、月末を待たずに確認できるダッシュボードにします。<br>（Excel・スプレッドシート）</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🔧</div>
+        <h3>既存マクロの引き継ぎ・修正</h3>
+        <p>作った人が辞めて分からなくなったExcelマクロを読み解き、直して、説明書を残します。</p>
       </div>
     </div>
   </section>
@@ -662,18 +865,18 @@
     <div class="strengths-grid">
       <div class="strength-item fade-in">
         <p class="strength-num">01</p>
-        <h3>現場目線の提案力</h3>
-        <p>「システムを作ること」が目的ではありません。現場の業務を深く理解した上で、本当に使えるツールを提案・開発します。難しい要件定義は不要です。</p>
+        <h3>物流の現場を知っている</h3>
+        <p>運賃・締め日・チャーター・付帯作業。物流の言葉で話せるので、難しい要件定義は不要です。「システムを作ること」ではなく、現場で使われ続けることを目的にしています。</p>
       </div>
       <div class="strength-item fade-in">
         <p class="strength-num">02</p>
-        <h3>圧倒的なコストパフォーマンス</h3>
-        <p>大手ベンダーに頼むと数百万円かかる自動化も、栞システムなら現実的なコストで実現。中小企業だからこそ実感できる費用対効果を提供します。</p>
+        <h3>効果を金額で示してから提案</h3>
+        <p>無料診断で「月に何時間・いくら分の作業が減るか」を先にお見せします。費用はその効果に見合う形でご提案するので、投資判断がしやすくなります。</p>
       </div>
       <div class="strength-item fade-in">
         <p class="strength-num">03</p>
-        <h3>スピード対応</h3>
-        <p>「急ぎで対応してほしい」にも柔軟に応えます。小回りの利くチーム体制だからこそ、大企業にはできないスピード感でプロジェクトを進めます。</p>
+        <h3>スピード対応と導入後の保守</h3>
+        <p>小回りの利く体制で、「急ぎで」にも柔軟に対応します。納品後の修正や追加も月額保守でお任せいただけるので、担当者が変わっても止まりません。</p>
       </div>
     </div>
   </section>
@@ -683,11 +886,12 @@
     <p class="section-label fade-in">Results</p>
     <h2 class="section-title fade-in">実績事例</h2>
     <div class="divider fade-in"></div>
-    <p class="section-desc fade-in">数字で見る、栞システムの改善効果。</p>
+    <p class="section-desc fade-in">物流・運輸の現場で実際に導入した仕組みです。</p>
     <div class="cases-grid">
       <div class="case-card fade-in">
-        <p class="case-tag">物流業 / 請求業務自動化</p>
-        <h3>毎月の請求書作成業務を完全自動化</h3>
+        <p class="case-tag">物流業 / 請求業務の自動化</p>
+        <h3>毎月10時間かかっていた請求書作成が、1クリックに</h3>
+        <p class="case-problem"><b>課題</b>取引先ごとに異なる形式の請求書を、毎月手作業で作成。月末に作業が集中し、担当者しか作り方が分からない状態でした。</p>
         <div class="case-metrics">
           <div class="metric">
             <div class="metric-val before">月10時間</div>
@@ -699,11 +903,17 @@
             <div class="metric-label">導入後</div>
           </div>
         </div>
-        <p class="case-desc">各取引先ごとに手作業で作成していた請求書を、VBAで完全自動化。データ入力から印刷・PDF出力まで、ボタン一つで完了する仕組みを構築しました。</p>
+        <p class="case-desc">データ入力から請求書の作成・印刷・PDF出力までを、VBAでボタン一つにまとめました。</p>
+        <ul class="case-effects">
+          <li>年間 <strong>約120時間</strong> の作業を削減</li>
+          <li>人件費に換算して <strong>年 約24万円</strong> 相当（時給2,000円で試算）</li>
+          <li>担当者以外でも、同じ手順で請求書を作成可能に</li>
+        </ul>
       </div>
       <div class="case-card fade-in">
         <p class="case-tag">運輸業 / チャーター発注管理アプリ</p>
-        <h3>AppSheet×スプレッドシートでチャーター発注を一元管理</h3>
+        <h3>紙・電話・Excelに散らばった発注を、スマホ1つで一元管理</h3>
+        <p class="case-problem"><b>課題</b>チャーター発注が紙伝票・電話・Excelに分散。事務所に戻らないと状況が分からず、売上・利益も月末まで見えませんでした。</p>
         <div class="case-metrics">
           <div class="metric">
             <div class="metric-val before">紙・Excel</div>
@@ -711,13 +921,51 @@
           </div>
           <div class="arrow">→</div>
           <div class="metric">
-            <div class="metric-val after">ブラウザ・スマホで<br>発注を管理</div>
+            <div class="metric-val after">スマホで<br>一元管理</div>
             <div class="metric-label">導入後</div>
           </div>
         </div>
-        <p class="case-desc">紙伝票・電話・Excelで分散していたチャーター発注業務をAppSheetアプリに集約。発注登録・一覧・カレンダー・ダッシュボードを統合し、ブラウザ・スマホどちらからでも出先でリアルタイムに確認・更新が可能に。売上・利益の見える化も実現。</p>
+        <p class="case-desc">AppSheetとスプレッドシートで、発注登録・一覧・カレンダー・ダッシュボードを1つのアプリに集約しました。</p>
+        <ul class="case-effects">
+          <li>出先からでも、発注状況を <strong>リアルタイムで確認・更新</strong></li>
+          <li>情報が1か所に集まり、<strong>誰でも同じ画面で</strong> 状況が分かる</li>
+          <li>売上・利益を <strong>月末を待たずに</strong> 把握</li>
+        </ul>
       </div>
     </div>
+  </section>
+
+  <!-- DIAGNOSIS -->
+  <section id="diagnosis">
+    <p class="section-label fade-in">Free Check</p>
+    <h2 class="section-title fade-in">無料業務診断（30分）</h2>
+    <div class="divider fade-in"></div>
+    <p class="section-desc fade-in">いまのExcelや業務の流れを見せていただくだけで、自動化できる作業と、その効果を金額でお伝えします。</p>
+    <ul class="diag-points fade-in">
+      <li>自動化できる作業と、できない作業の切り分け</li>
+      <li>削減できる時間と、人件費に換算した金額の目安</li>
+      <li>改善の進め方と、費用のおおよその目安</li>
+    </ul>
+    <div class="diag-steps fade-in">
+      <div class="diag-step">
+        <p class="step-no">STEP 01</p>
+        <h3>お申し込み</h3>
+        <p>下のフォームから。2営業日以内に日程をご連絡します。</p>
+      </div>
+      <div class="diag-step">
+        <p class="step-no">STEP 02</p>
+        <h3>30分の診断</h3>
+        <p>オンラインで全国対応。対面は埼玉南東部・東京都内でうかがいます。</p>
+      </div>
+      <div class="diag-step">
+        <p class="step-no">STEP 03</p>
+        <h3>改善案のご提示</h3>
+        <p>効果の金額と費用を並べてご提案。ご依頼いただくかは、その後でご判断ください。</p>
+      </div>
+    </div>
+    <p class="diag-note fade-in">診断のみで終わっても費用はかかりません。無理な営業もいたしません。</p>
+    <a href="#contact" class="btn-primary fade-in">無料業務診断を申し込む</a>
+    <p class="other-industry fade-in">物流以外の業種の方も、Excel・VBAによる業務改善のご相談を承っています。</p>
   </section>
 
   <!-- VIDEO -->
@@ -750,7 +998,7 @@
       </tr>
       <tr>
         <th>事業内容</th>
-        <td>VBA開発・Excel支援・業務改善提案・DX推進</td>
+        <td>物流・運送・倉庫会社向けの業務自動化（VBA開発・Excel支援・AppSheet開発）、業務改善提案・DX推進</td>
       </tr>
       <tr>
         <th>所在地</th>
@@ -762,9 +1010,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <p class="section-label fade-in">Contact</p>
-    <h2 class="section-title fade-in">お問い合わせ</h2>
+    <h2 class="section-title fade-in">無料業務診断のお申し込み・お問い合わせ</h2>
     <div class="divider fade-in"></div>
-    <p class="section-desc fade-in">業務の課題やご相談、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。</p>
+    <p class="section-desc fade-in">診断のお申し込み、業務の課題やご相談はこちらから。通常2営業日以内にご返信いたします。</p>
     <div class="contact-inner">
       <form class="fade-in" action="https://formspree.io/f/mzdwoqoo" method="POST" onsubmit="formSubmit(event)">
         <div class="form-group">
@@ -783,16 +1031,20 @@
           <label>ご相談の種類</label>
           <select name="category">
             <option value="">選択してください</option>
-            <option>VBA開発・自動化</option>
-            <option>Excel支援・設計</option>
-            <option>業務改善提案</option>
-            <option>DX推進</option>
+            <option>無料業務診断の申し込み</option>
+            <option>請求書・運賃計算</option>
+            <option>配車・チャーター発注管理</option>
+            <option>入出荷・在庫の集計</option>
+            <option>転記作業・日報の自動化</option>
+            <option>売上・利益の見える化</option>
+            <option>既存マクロの引き継ぎ・修正</option>
+            <option>物流以外の業種のご相談</option>
             <option>その他</option>
           </select>
         </div>
         <div class="form-group">
           <label>お問い合わせ内容<span>*</span></label>
-          <textarea name="message" placeholder="現在の課題や自動化したい業務の内容をできるだけ具体的にお書きください。" required></textarea>
+          <textarea name="message" placeholder="例）荷主ごとの請求書作成に毎月○時間かかっている／配車表をExcelで手作業で作っている など。診断希望の場合は、ご希望の日時（オンライン・対面）もお書きください。" required></textarea>
         </div>
         <button type="submit" class="btn-submit">送信する</button>
       </form>
