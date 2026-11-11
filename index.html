@@ -510,6 +510,50 @@
       color: var(--text2);
     }
 
+    /* ========== PRICING ========== */
+    #pricing { background: var(--bg); }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .price-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .price-card.featured { border-color: var(--accent); }
+
+    .price-card .price-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+    }
+
+    .price-card .price-val {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .price-val small { font-size: 0.85rem; font-weight: 500; color: var(--text2); margin-left: 0.2rem; }
+
+    .price-card p { font-size: 0.85rem; color: var(--text2); line-height: 1.8; }
+
+    .price-card .price-meta { font-size: 0.78rem; color: var(--text); border-top: 1px solid var(--border); padding-top: 0.6rem; margin-top: auto; }
+
+    .price-notes { list-style: none; font-size: 0.8rem; color: var(--text2); max-width: 760px; }
+    .price-notes li { padding-left: 1rem; position: relative; margin-bottom: 0.2rem; }
+    .price-notes li::before { content: '・'; position: absolute; left: 0; }
+
     /* ========== VIDEO ========== */
     #video { background: var(--bg); text-align: center; }
 
@@ -712,7 +756,7 @@
       .services-grid { grid-template-columns: 1fr; }
       .strengths-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
-      .pains-grid, .pain-stats, .diag-steps { grid-template-columns: 1fr; }
+      .pains-grid, .pain-stats, .diag-steps, .price-grid { grid-template-columns: 1fr; }
       .case-metrics { flex-wrap: wrap; }
 
       .metric-val { font-size: 1.2rem; }
@@ -745,6 +789,7 @@
     <nav>
       <a href="#services">サービス</a>
       <a href="#cases">実績</a>
+      <a href="#pricing">料金</a>
       <a href="#diagnosis">無料診断</a>
       <a href="#company">会社概要</a>
       <a href="#contact" class="nav-cta">無料診断を申し込む</a>
@@ -756,6 +801,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMenu()">サービス</a>
     <a href="#cases" onclick="closeMenu()">実績</a>
+    <a href="#pricing" onclick="closeMenu()">料金</a>
     <a href="#diagnosis" onclick="closeMenu()">無料診断</a>
     <a href="#company" onclick="closeMenu()">会社概要</a>
     <a href="#contact" onclick="closeMenu()">無料診断を申し込む</a>
@@ -933,6 +979,44 @@
         </ul>
       </div>
     </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <p class="section-label fade-in">Pricing</p>
+    <h2 class="section-title fade-in">料金の目安</h2>
+    <div class="divider fade-in"></div>
+    <p class="section-desc fade-in">正式なお見積もりは、無料業務診断で削減できる時間と金額をお伝えしたうえでご提示します。</p>
+    <div class="price-grid">
+      <div class="price-card fade-in">
+        <p class="price-name">ライト</p>
+        <p class="price-val">5万円<small>〜（税別）</small></p>
+        <p>帳票1つ・作業1つの自動化。<br>例：請求書の作成だけをボタン一つに。</p>
+        <p class="price-meta">納期の目安：1〜2週間</p>
+      </div>
+      <div class="price-card featured fade-in">
+        <p class="price-name">スタンダード</p>
+        <p class="price-val">15万円<small>〜（税別）</small></p>
+        <p>1つの業務の流れ全体を自動化。<br>例：請求＋運賃計算＋集計をまとめて。</p>
+        <p class="price-meta">納期の目安：3〜6週間</p>
+      </div>
+      <div class="price-card fade-in">
+        <p class="price-name">プレミアム</p>
+        <p class="price-val">30万円<small>〜（税別）</small></p>
+        <p>AppSheetアプリ＋Excel連携＋売上・利益の見える化。<br>例：配車・発注をスマホで一元管理。</p>
+        <p class="price-meta">納期の目安：1〜3か月</p>
+      </div>
+      <div class="price-card fade-in">
+        <p class="price-name">保守（月額）</p>
+        <p class="price-val">1万円<small>〜／月（税別）</small></p>
+        <p>納品後の修正、小さな追加、操作のお問い合わせに対応します。</p>
+        <p class="price-meta">担当者が変わっても止まらない体制に</p>
+      </div>
+    </div>
+    <ul class="price-notes fade-in">
+      <li>各プランとも、納品前の修正は2回まで含みます。それ以降は別途お見積もりします。</li>
+      <li>お支払いは、着手時に半額、納品時に残額をお願いしています。</li>
+    </ul>
   </section>
 
   <!-- DIAGNOSIS -->
