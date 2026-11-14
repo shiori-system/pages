@@ -582,6 +582,9 @@
     .video-caption h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
     .video-caption p { font-size: 0.82rem; color: var(--text2); line-height: 1.7; }
     .video-cta { margin-top: 1rem; }
+    .video-points { list-style: none; margin-top: 0.6rem; }
+    .video-points li { font-size: 0.82rem; color: var(--text); line-height: 1.7; padding-left: 1.1rem; position: relative; }
+    .video-points li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); }
     @media (max-width: 768px) { .video-grid { grid-template-columns: 1fr; } }
 
     .video-container {
@@ -1124,7 +1127,7 @@
         </div>
         <div class="video-caption">
           <h3>栞システムの紹介</h3>
-          <p>どんな会社で、どんな仕組みを作っているのかをご紹介します。</p>
+          <p>物流の現場で使われている仕組みを、実際の画面でご紹介します。</p>
         </div>
       </div>
       <div class="video-wrap fade-in">
@@ -1139,7 +1142,12 @@
         </div>
         <div class="video-caption">
           <h3>運賃チェック アドイン（物流・EC向け）</h3>
-          <p>見積・売上・請求書の運賃を、出荷リストと運賃表から一瞬でチェックする様子です。</p>
+          <p>請求書の運賃、1件ずつ目で確認していませんか？ 出荷リストと運賃表から、ズレをその場で見つけます。</p>
+          <ul class="video-points">
+            <li>出荷リストのすべての行に運賃を追記できます</li>
+            <li>運賃表は何枚（いくつもの契約）あってもOK</li>
+            <li>サイズ・都道府県の交点を、契約ごとに参照します</li>
+          </ul>
           <a href="https://note.com/shiori_system/n/n96d1d1ad9b3f" class="btn-primary video-cta" target="_blank" rel="noopener">noteで購入する（¥2,980）</a>
         </div>
       </div>
