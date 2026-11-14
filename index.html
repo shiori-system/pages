@@ -554,6 +554,20 @@
     .price-notes li { padding-left: 1rem; position: relative; margin-bottom: 0.2rem; }
     .price-notes li::before { content: '・'; position: absolute; left: 0; }
 
+
+    /* ========== NOTE ========== */
+    #notes { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .notes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .note-card { background: var(--bg3); border: 1px solid var(--border); padding: 1.4rem; text-decoration: none; color: var(--text); display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.1s; }
+    .note-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .note-card.featured { border-color: var(--accent); }
+    .note-card .note-badge { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.6rem; }
+    .note-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.5; margin-bottom: 0.6rem; }
+    .note-card p { font-size: 0.82rem; color: var(--text2); line-height: 1.7; flex: 1; }
+    .note-card .note-price { margin-top: 1rem; font-size: 1.1rem; font-weight: 800; color: var(--accent); flex: 0; }
+    .note-card .note-price.free { color: var(--text2); font-size: 0.9rem; font-weight: 700; }
+    .notes-more { margin-top: 1.75rem; }
+
     /* ========== VIDEO ========== */
     #video { background: var(--bg); text-align: center; }
 
@@ -978,6 +992,38 @@
           <li>売上・利益を <strong>月末を待たずに</strong> 把握</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+
+  <!-- NOTE -->
+  <section id="notes">
+    <p class="section-label fade-in">Know-how</p>
+    <h2 class="section-title fade-in">すぐ使えるExcelノウハウ（note）</h2>
+    <div class="divider fade-in"></div>
+    <p class="section-desc fade-in">現場で作ってきた仕組みの一部を、記事とツールで公開しています。まずは自社で試してみたい方に。</p>
+    <div class="notes-grid">
+      <a class="note-card featured fade-in" href="https://note.com/shiori_system/n/n96d1d1ad9b3f" target="_blank" rel="noopener">
+        <p class="note-badge">おすすめ / 物流・EC向け</p>
+        <h3>見積・売上・請求書の運賃チェックがExcel関数で一瞬に</h3>
+        <p>出荷リストと運賃表を突き合わせて、請求ミスをその場で見つける方法。</p>
+        <p class="note-price">¥2,980</p>
+      </a>
+      <a class="note-card fade-in" href="https://note.com/shiori_system/n/nc8952d757d3c" target="_blank" rel="noopener">
+        <p class="note-badge">ツール付き</p>
+        <h3>CSV読込ツール（文字化け・0が消えるを解決）</h3>
+        <p>取引先や基幹システムのCSVを、崩さずにExcelへ取り込めるツール。</p>
+        <p class="note-price">¥500</p>
+      </a>
+      <a class="note-card fade-in" href="https://note.com/shiori_system/n/nf7dcc7c70803" target="_blank" rel="noopener">
+        <p class="note-badge">無料で読める</p>
+        <h3>Excelの表、壊されてませんか？ 入力フォームで防ぐ</h3>
+        <p>「触らせない・間違えさせない」入力フォームの考え方。</p>
+        <p class="note-price free">無料</p>
+      </a>
+    </div>
+    <div class="notes-more fade-in">
+      <a href="https://note.com/shiori_system" class="btn-secondary" target="_blank" rel="noopener">noteで全記事を見る →</a>
     </div>
   </section>
 
