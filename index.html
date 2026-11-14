@@ -576,6 +576,14 @@
       margin: 0 auto;
     }
 
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; text-align: left; }
+    .video-grid .video-wrap { max-width: none; margin: 0; }
+    .video-caption { margin-top: 0.85rem; }
+    .video-caption h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+    .video-caption p { font-size: 0.82rem; color: var(--text2); line-height: 1.7; }
+    .video-cta { margin-top: 1rem; }
+    @media (max-width: 768px) { .video-grid { grid-template-columns: 1fr; } }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -1103,15 +1111,37 @@
     <p class="section-label fade-in">Movie</p>
     <h2 class="section-title fade-in">紹介動画</h2>
     <div class="divider fade-in" style="margin: 1.5rem auto;"></div>
-    <div class="video-wrap fade-in">
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/FuJpZX0sJjM"
-          title="栞システム紹介動画"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    <div class="video-grid">
+      <div class="video-wrap fade-in">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/FuJpZX0sJjM"
+            title="栞システム紹介動画"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">
+          <h3>栞システムの紹介</h3>
+          <p>どんな会社で、どんな仕組みを作っているのかをご紹介します。</p>
+        </div>
+      </div>
+      <div class="video-wrap fade-in">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/myt_YNTlv1g"
+            title="運賃チェック アドイン紹介動画"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">
+          <h3>運賃チェック アドイン（物流・EC向け）</h3>
+          <p>見積・売上・請求書の運賃を、出荷リストと運賃表から一瞬でチェックする様子です。</p>
+          <a href="https://note.com/shiori_system/n/n96d1d1ad9b3f" class="btn-primary video-cta" target="_blank" rel="noopener">noteで購入する（¥2,980）</a>
+        </div>
       </div>
     </div>
   </section>
